@@ -7,7 +7,6 @@ import com.tictactoe.game.Symbol;
 import java.util.Scanner;
 
 public class HumanPlayer extends Player {
-    private final Scanner scanner = new Scanner(System.in);
     public HumanPlayer(Board board, Symbol symbol) {
         super(board, symbol);
     }
@@ -15,6 +14,7 @@ public class HumanPlayer extends Player {
     @Override
     public Coordinate getNextMove() {
         System.out.printf("Current board: %n%s%n", this.board);
+        final Scanner scanner = new Scanner(System.in);
 
         while (true) {
             try {
@@ -25,7 +25,7 @@ public class HumanPlayer extends Player {
                 int y = Integer.parseInt(coordinates[1]) - 1;
 
                 if (x < 0 || y < 0 || x > board.getSize() - 1 || y > board.getSize() - 1) {
-                    System.out.printf("Illegal Coordinate: (%d, %d) is not part of Board of size(%d, %d)%n",
+                    System.out.printf("Illegal Coordinate: (%d,%d) is not part of Board of size(%d,%d)%n",
                             x + 1, y + 1, board.getSize(), board.getSize());
                     continue;
                 }

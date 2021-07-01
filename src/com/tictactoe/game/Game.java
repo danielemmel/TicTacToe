@@ -16,6 +16,18 @@ public class Game {
     private final Board board;
     private final int maxMoves;
 
+    public com.tictactoe.player.Player getPlayer() {
+        return Player;
+    }
+
+    public com.tictactoe.player.Player getOpponent() {
+        return Opponent;
+    }
+
+    public int getMaxMoves() {
+        return maxMoves;
+    }
+
     public Game(Symbol Player, int n) throws IllegalArgumentException {
         this.board = new Board(n);
         this.Player = new HumanPlayer(board, Player);

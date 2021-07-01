@@ -15,6 +15,9 @@ public class Board {
         if (n < 3) {
             throw new IllegalArgumentException("Board must be at least 3x3");
         }
+        if(n > 10) {
+            throw new IllegalArgumentException("Board must be 10x10 or smaller");
+        }
         this.board = new Symbol[n][n];
         // Fill whole board with NONE
         var boardBase = new Symbol[n];
